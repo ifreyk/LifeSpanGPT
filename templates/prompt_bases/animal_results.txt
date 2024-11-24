@@ -1,0 +1,15 @@
+Give an answer in proper JSON format using double quotes around keys and values. 
+For example: 
+{{
+  "animal_results": [
+    {{
+      "median_treatment": 10.5, # median treatment lifespan of the group (only value)
+      "max_treatment": 15.3,# max treatment lifespan of the group (only value)
+      "treatment_units":"treatment_units1" # In what units measured lifespan Month, Age, Week
+      "p_value":0.01 #p-value of statistical test if exist (only value)
+    }}
+  ]
+}}
+Context: {context}
+Question: {question}
+Answer:

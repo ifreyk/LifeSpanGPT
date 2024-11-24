@@ -5,3 +5,4 @@ processed_data/
 __pycache__
 *.xlsx
 *.csv
+rertiever/__pycache__

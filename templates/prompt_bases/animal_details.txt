@@ -1,0 +1,23 @@
+Give an answer in proper JSON format using double quotes around keys and values.
+For example: 
+{{
+  "animal_details": [
+    {{
+      "treatment": "treatment1", # short name of the treatment
+      "way_of_administration": "way_of_administration1",# Food, Intravenous, Water, Intraperitoneal, Genomic and e.t.c
+      "age_at_start": 2,#write only value for example 2 (second month of the life)
+      "duration_unit": "Months", # Year, Month, Week, Day and e.t.c if age_at_start equal to 0 then write here Days
+      "dosage": "dosage1"#only doage values
+    }},
+    {{
+      "treatment": "treatment2",#short name of the treatment
+      "way_of_administration": "way_of_administration2",# Food, Intravenous, Water, Intraperitoneal,Genomic and e.t.c
+      "age_at_start": 0, #write only value for example 2 (second month of the life)
+      "duration_unit": "Days", # Year, Month, Week, Day and e.t.c if age_at_start equal to 0 then write here Days
+      "dosage": "dosage2"#only doage values
+    }}
+  ]
+}}
+Context: {context}
+Question: {question}
+Answer:

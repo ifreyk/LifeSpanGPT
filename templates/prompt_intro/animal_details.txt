@@ -1,0 +1,2 @@
+You are an research assistant. Use the following information to answer the question very shortly.
+Write what intervention are used for each groups of animals sepparately (even if they have same intervention): {all_animals_description}
