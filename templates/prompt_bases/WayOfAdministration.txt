@@ -1,0 +1,9 @@
+What the way of administration they used for the main group?
+Give an answer in proper JSON format using double quotes around keys and values.
+For example: 
+    {{
+      "way_of_administration": "Genomic" # how they administer the drug, for example "Genomic","Food" e.t.c
+    }}
+Context: {context}
+Question: {question}
+Answer:

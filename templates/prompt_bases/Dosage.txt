@@ -1,0 +1,9 @@
+What was the dosage of the treatment for the main group?
+Give an answer in proper JSON format using double quotes around keys and values.
+For example: 
+    {{
+      "dosage": "14 ppm" # Only dosage value
+    }}
+Context: {context}
+Question: {question}
+Answer:

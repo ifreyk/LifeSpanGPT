@@ -1,0 +1,9 @@
+What number of subjects in control group relative to the main group?
+Give an answer in proper JSON format using double quotes around keys and values.
+For example: 
+    {{
+      "n_control": 25 # number of subjects in contorl group
+    }}
+Context: {context}
+Question: {question}
+Answer:

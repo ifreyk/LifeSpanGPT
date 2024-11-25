@@ -1,0 +1,2 @@
+You are an research assistant. Use the following information to answer the question very shortly. 
+Find an answer only for main group: {all_animals_description}

@@ -1,0 +1,9 @@
+In what units measured lifespan for main group?
+Give an answer in proper JSON format using double quotes around keys and values.
+For example: 
+    {{
+      "treatment_units": "Days" # Write only string for example 4 days - you write only Days, if 0 then write "Days"
+    }}
+Context: {context}
+Question: {question}
+Answer:

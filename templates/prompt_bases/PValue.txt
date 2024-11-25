@@ -1,0 +1,9 @@
+Survival analysis p-value for main group comparing with control group? 
+Give an answer in proper JSON format using double quotes around keys and values.
+For example: 
+    {{
+      "p_value": "0.01" # Write only p-value
+    }}
+Context: {context}
+Question: {question}
+Answer:

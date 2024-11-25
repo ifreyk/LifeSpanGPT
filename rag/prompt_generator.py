@@ -10,45 +10,65 @@ class Animal(BaseModel):
     strain: str = Field(description="Strain of the animal")
     group: str = Field(description="Control or experiment group")
     gender: str = Field(description="Sex of the animal")
-    n_treatment: Optional[int] = Field(description="Number of animals in this group")
-    n_control: Optional[int] = Field(description="Number of animals in control group")
 
 
 class AnimalList(BaseModel):
     animals: list[Animal]
 
+class Ntreatment(BaseModel):
+    n_control: str = Field(
+        description="Number of subjects in cotrol group relative to experiment group"
+    )
 
-class AnimalDetails(BaseModel):
+class Ncontrol(BaseModel):
+    n_treatment: str = Field(
+        description="Number of subjects in experimental group"
+    )
+
+class Treatment(BaseModel):
     treatment: str = Field(
-        description="What type of treatment or intervention are used?"
+        description="What type of treatment or intervention are used"
     )
+
+
+class WayOfAdministration(BaseModel):
     way_of_administration: str = Field(
-        description="What way of administation are used?"
+        description="What way of administation are used"
     )
+
+
+class AgeAtStart(BaseModel):
     age_at_start: int = Field(description="Age of the start of treamtment")
+
+
+class DurationUnit(BaseModel):
     duration_unit: str = Field(
         description="In which units age of the start was Month/Week/Day and e.t.c"
     )
+
+
+class Dosage(BaseModel):
     dosage: str = Field(description="Dosage of administration")
 
 
-class AnimalDetailsList(BaseModel):
-    animal_details: List[AnimalDetails]
-
-
-class AnimalResults(BaseModel):
+class MedianTreatment(BaseModel):
     median_treatment: Optional[float] = Field(
         description="Median treatment duration in units"
     )
+
+
+class MaxTreatment(BaseModel):
     max_treatment: Optional[float] = Field(
         description="Max treatment duration in units"
     )
+
+
+class TreatmentUnits(BaseModel):
     treatment_units: str = Field(description="In what units measured lifespan")
+
+
+class PValue(BaseModel):
     p_value: Optional[str] = Field(description="p-value for statistical analysis")
-
-
-class AnimalResultsList(BaseModel):
-    animal_results: List[AnimalResults]
 
 
 class PromptGeneratorConfig(BaseModel):
@@ -65,8 +85,15 @@ class PromptGenerator:
         self.config = config
         self.output_class = {
             "animal": AnimalList,
-            "animal_details": AnimalDetailsList,
-            "animal_results": AnimalResultsList,
+            "treatment": Treatment,
+            "way_of_administration": WayOfAdministration,
+            "age_at_start": AgeAtStart,
+            "duration_unit": DurationUnit,
+            "dosage": Dosage,
+            "median_treatment": MedianTreatment,
+            "max_treatment": MaxTreatment,
+            "treatment_units": TreatmentUnits,
+            "p_value": PValue,
         }
 
     def create_parser(self):

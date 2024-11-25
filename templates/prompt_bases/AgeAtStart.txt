@@ -1,0 +1,9 @@
+What was the age of subjects from the main group when researchers starts the trial?
+Give an answer in proper JSON format using double quotes around keys and values.
+For example: 
+    {{
+      "age_at_start": 0 # Write only integer for example 4 days - you write only 4
+    }}
+Context: {context}
+Question: {question}
+Answer:

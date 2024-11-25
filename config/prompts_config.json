@@ -1,17 +1,52 @@
 {
     "animal": {
-        "prompt_intro": "templates/prompt_intro/animal.txt",
-        "prompt_base": "templates/prompt_bases/animal.txt",
-        "query": "What groups of animals are used in this study?"
+        "prompt_intro": "templates/prompt_intro/intro.txt",
+        "prompt_base": "templates/prompt_bases/AnimalList.txt",
+        "query": "What main groups of animals are used in this study?"
     },
-    "animal_details": {
-        "prompt_intro": "templates/prompt_intro/animal_details.txt",
-        "prompt_base": "templates/prompt_bases/animal_details.txt",
+    "treatment": {
+        "prompt_intro": "templates/prompt_intro/intro_all.txt",
+        "prompt_base": "templates/prompt_bases/Treatment.txt",
         "query": "What treatment or intervention or manipulation are used?"
     },
-    "animal_results": {
-        "prompt_intro": "templates/prompt_intro/ainmal_results.txt",
-        "prompt_base": "templates/prompt_bases/animal_results.txt",
-        "query": "What are Lifespan or survival curve/results?"
+    "way_of_administration": {
+        "prompt_intro": "templates/prompt_intro/intro_all.txt",
+        "prompt_base": "templates/prompt_bases/WayOfAdministration.txt",
+        "query": "What is the way of administration of treatment?"
+    },
+    "age_at_start": {
+        "prompt_intro": "templates/prompt_intro/intro_all.txt",
+        "prompt_base": "templates/prompt_bases/AgeAtStart.txt",
+        "query": "What was the age of subjects in the experiment?"
+    },
+    "duration_unit": {
+        "prompt_intro": "templates/prompt_intro/intro_all.txt",
+        "prompt_base": "templates/prompt_bases/DurationUnit.txt",
+        "query": "What was the age of subjects in the experiment?"
+    },
+    "dosage": {
+        "prompt_intro": "templates/prompt_intro/intro_all.txt",
+        "prompt_base": "templates/prompt_bases/Dosage.txt",
+        "query": "What was the dosage of the treatment for the main group?"
+    },
+    "median_treatment": {
+        "prompt_intro": "templates/prompt_intro/intro_all.txt",
+        "prompt_base": "templates/prompt_bases/MedianTreatment.txt",
+        "query": "What was the median treatment survival result?"
+    },
+    "max_treatment": {
+        "prompt_intro": "templates/prompt_intro/intro_all.txt",
+        "prompt_base": "templates/prompt_bases/MaxTreatment.txt",
+        "query": "What was the max treatment survival result?"
+    },
+    "treatment_units": {
+        "prompt_intro": "templates/prompt_intro/intro_all.txt",
+        "prompt_base": "templates/prompt_bases/TreatmentUnits.txt",
+        "query": "In what units measured lifespan?"
+    },
+    "p_value": {
+        "prompt_intro": "templates/prompt_intro/intro_all.txt",
+        "prompt_base": "templates/prompt_bases/PValue.txt",
+        "query": "Survival analysis p-value?"
     }
 }

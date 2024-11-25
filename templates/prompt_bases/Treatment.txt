@@ -1,0 +1,9 @@
+What treatment or intervention is used?
+Give an answer in proper JSON format using double quotes around keys and values.
+For example: 
+    {{
+      "treatment": "treatment1" # short name of the treatment
+    }}
+Context: {context}
+Question: {question}
+Answer:

@@ -1,0 +1,9 @@
+What was the max treatment result for the main group after experiment?
+Give an answer in proper JSON format using double quotes around keys and values.
+For example: 
+    {{
+      "max_treatment": 400 # Write only integer for example 400 days - you write only 400
+    }}
+Context: {context}
+Question: {question}
+Answer:

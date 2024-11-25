@@ -1,0 +1,9 @@
+What number of subjects in this group?
+Give an answer in proper JSON format using double quotes around keys and values.
+For example: 
+    {{
+      "n_treatment": 25 # number of subjects in this group
+    }}
+Context: {context}
+Question: {question}
+Answer:
