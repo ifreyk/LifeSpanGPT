@@ -7,6 +7,7 @@ from rag.retriever import RetrieverConfig, Retriever
 from rag.prompt_generator import PromptGeneratorConfig, PromptGenerator
 from rag.llm import LLMConfig, LLM
 from rag.qa import QA
+import time
 
 load_dotenv()
 
@@ -68,7 +69,6 @@ class LifeSpanGPT:
             animal_description = f"{animal.gender} {animal.species} {animal.group} {animal.strain}"
             for key, value in animal.dict().items():
                 result_df.loc[i,key] = value
-            return result_df
             for key, value in self.prompt_config.items():
                 query = value["query"]
                 print(f"Answering to question: {query}")
@@ -89,6 +89,7 @@ class LifeSpanGPT:
                         prompt["prompt"],
                         query,
                     )
-                    for field_name, _ in answer.model_fields.items():
-                        result_df.loc[i,field_name] = answer.field_name
+                    for key, value in answer.dict().items():
+                        result_df.loc[i,key] = value
+                time.sleep(20)
         return result_df
