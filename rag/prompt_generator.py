@@ -6,12 +6,10 @@ from langchain_core.prompts import PromptTemplate
 
 
 class Animal(BaseModel):
-    species: str = Field(description="Species of the animal")
-    strain: str = Field(description="Strain of the animal")
-    group: str = Field(description="Control or experiment group")
-    gender: str = Field(description="Sex of the animal")
-    n_treatment: Optional[int] = Field(description="Number of animals in this group")
-    n_control: Optional[int] = Field(description="Number of animals in control group")
+    species: Union[str,None] = Field(description="Species of the animal")
+    strain: Union[str,None] = Field(description="Strain of the animal")
+    group: Union[str,None] = Field(description="Name of the subject group")
+    gender: Union[str,None] = Field(description="Sex of the animal")
 
 
 class AnimalList(BaseModel):
@@ -19,17 +17,17 @@ class AnimalList(BaseModel):
 
 
 class AnimalDetails(BaseModel):
-    treatment: str = Field(
+    treatment: Union[str,None] = Field(
         description="What type of treatment or intervention are used?"
     )
-    way_of_administration: str = Field(
+    way_of_administration: Union[str,None] = Field(
         description="What way of administation are used?"
     )
-    age_at_start: int = Field(description="Age of the start of treamtment")
-    duration_unit: str = Field(
+    age_at_start: Union[int,str,None] = Field(description="Age of the start of treamtment")
+    duration_unit: Union[str,None] = Field(
         description="In which units age of the start was Month/Week/Day and e.t.c"
     )
-    dosage: str = Field(description="Dosage of administration")
+    dosage: Union[str,int,None] = Field(description="Dosage of administration")
 
 
 class AnimalDetailsList(BaseModel):
@@ -37,15 +35,22 @@ class AnimalDetailsList(BaseModel):
 
 
 class AnimalResults(BaseModel):
-    median_treatment: Optional[float] = Field(
+    n_treatment: Union[int,str,None] = Field(description="Number of animals in this group")
+    n_control: Union[int,str,None] = Field(description="Number of animals in control group")
+    median_treatment: Union[int,float,str,None] = Field(
         description="Median treatment duration in units"
     )
-    max_treatment: Optional[float] = Field(
+    max_treatment: Union[int,float,str,None] = Field(
         description="Max treatment duration in units"
     )
-    treatment_units: str = Field(description="In what units measured lifespan")
-    p_value: Optional[str] = Field(description="p-value for statistical analysis")
-
+    treatment_units: Union[str,None] = Field(description="In what units measured lifespan")
+    p_value: Union[str,float,None] = Field(description="p-value for statistical analysis")
+    median_control: Union[int,float,str,None] = Field(
+        description="Median treatment duration in units"
+    )
+    max_control: Union[int,float,str,None] = Field(
+        description="Max treatment duration in units"
+    )
 
 class AnimalResultsList(BaseModel):
     animal_results: List[AnimalResults]

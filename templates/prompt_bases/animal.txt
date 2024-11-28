@@ -1,17 +1,14 @@
 Give an aswer in proper JSON format using double quotes around keys and values format
+Return just a JSON
 For example: {{"animals":[{{"species":"animal_species1",
          "strain":"animal_strain1", # ONLY strain name of the animal group
          "group":"experiment1",# Name of the group for example Rapa, KO "ABC" gene and e.t.c
-         "gender":"male",
-         "n_treatment":25,# Number of animals in this group
-         "n_control":40 # Number of animals in control group
+         "gender":"male"
          }},
          {{"species":"animal_species2",
          "strain":"animal_strain2",# ONLY strain name of the animal group ONLY name
          "group":"experiment2",# Name of the group for example Rapa, KO ABC gene and e.t.c
-         "gender":"female",
-         "n_treatment":25,# Number of animals in this group
-         "n_control":40 # Number of animals in control group
+         "gender":"female"
          }}]}}
 Context: {context}
 Question: {question}

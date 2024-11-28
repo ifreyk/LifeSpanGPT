@@ -9,8 +9,6 @@ from rag.qa import QA
 
 load_dotenv()
 
-COHERE_TOKEN = os.getenv("COHERE_TOKEN")
-MISTRAL_TOKEN = os.getenv("MISTRAL_TOKEN")
 PROMPT_CONFIG_PATH = "config/prompts_config.json"
 
 with open(PROMPT_CONFIG_PATH, "r", encoding="utf-8") as file:
@@ -69,7 +67,7 @@ class LifeSpanGPT:
                 animal_descriptions = [
                 f"{animal.gender} {animal.species} {animal.group} {animal.strain}" 
                 for animal in answer.animals]
-                all_animals_description = ", ".join(animal_descriptions)
+                all_animals_description = "<SEP>".join(animal_descriptions)
             else:
                 prompt_config = PromptGeneratorConfig(
                     prompt_intro = value["prompt_intro"],

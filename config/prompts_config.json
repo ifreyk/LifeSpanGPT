@@ -2,7 +2,7 @@
     "animal": {
         "prompt_intro": "templates/prompt_intro/animal.txt",
         "prompt_base": "templates/prompt_bases/animal.txt",
-        "query": "What groups of animals are used in this study?"
+        "query": "What groups of animals are used in the study?"
     },
     "animal_details": {
         "prompt_intro": "templates/prompt_intro/animal_details.txt",

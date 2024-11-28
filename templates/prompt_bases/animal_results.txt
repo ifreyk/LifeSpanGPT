@@ -1,12 +1,29 @@
-Give an answer in proper JSON format using double quotes around keys and values. 
+Give an answer in proper JSON format using double quotes around keys and values.
+!! IMPORTANT !! Number of input animal groups should be the same as number of your answer blocks in "animal_details":[animal_group1,animal_group2,...] animal_groups1,2... from groups sepparated by <SEP>
+Return just a JSON
+Provide an entry for each experimental subject group separately.
 For example: 
 {{
   "animal_results": [
     {{
-      "median_treatment": 10.5, # median treatment lifespan of the group (only value)
-      "max_treatment": 15.3,# max treatment lifespan of the group (only value)
+      "n_treatment":25,# Number of animals in this group
+      "n_control":40, # Number of animals in control group
+      "median_treatment": 10.5, # median treatment lifespan of the experimental group
+      "max_treatment": 15.3,# max treatment lifespan of the experimental group
       "treatment_units":"treatment_units1" # In what units measured lifespan Month, Age, Week
-      "p_value":0.01 #p-value of statistical test if exist (only value)
+      "p_value":0.01 #p-value of statistical test if exist
+      "median_control":7.5, #median treatment lifespan of the control group
+      "max_control":10 # #max treatment lifespan of the control group
+    }},
+    {{
+      "n_treatment":25,# Number of animals in this group
+      "n_control":40, # Number of animals in control group
+      "median_treatment": 11.5, # median treatment lifespan of the experimental group
+      "max_treatment": 16.3,# max treatment lifespan of the experimental group
+      "treatment_units":"treatment_units2" # In what units measured lifespan Month, Age, Week
+      "p_value":0.01,#p-value of statistical test if exist
+      "median_control":7.5, #median treatment lifespan of the control group
+      "max_control":10 # #max treatment lifespan of the control group
     }}
   ]
 }}

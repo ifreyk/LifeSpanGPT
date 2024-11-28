@@ -1,6 +1,7 @@
 from langchain_mistralai import ChatMistralAI
 from pydantic import BaseModel, Field
 from typing import List, Union
+from langchain_openai import ChatOpenAI
 
 
 class LLMConfig(BaseModel):
@@ -14,8 +15,8 @@ class LLM:
         self.config = config
 
     def create_llm(self):
-        llm = ChatMistralAI(
-            model_name=self.config.model_name,
+        llm = ChatOpenAI(
+            name=self.config.model_name,
             temperature=self.config.temperature,
             api_key=self.config.api_key,
         )
