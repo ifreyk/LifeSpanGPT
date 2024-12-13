@@ -2,6 +2,7 @@ Give an answer in proper JSON format using double quotes around keys and values.
 !! IMPORTANT !! Number of input animal groups should be the same as number of your answer blocks in "animal_details":[animal_group1,animal_group2,...] animal_groups1,2... from groups sepparated by <SEP>
 Return just a JSON
 Provide an entry for each experimental subject group separately.
+If you nor sure about some fields, fill them like null
 For example: 
 {{
   "animal_details": [

@@ -1,5 +1,6 @@
 import os
 import json
+import time
 from dotenv import load_dotenv
 
 from rag.retriever import RetrieverConfig, Retriever
@@ -45,43 +46,48 @@ class LifeSpanGPT:
     def run_pipeline(self):
         compression_retriever = self.run_retriever()
         chat_llm = self.run_llm()
-        output = {}
-        for key, value in PROMPT_CONFIG.items():
-            query = value["query"]
-            print(f"Answering to question: {query}")
-            if key == "animal":
-                prompt_config = PromptGeneratorConfig(
-                    prompt_intro=value["prompt_intro"],
-                    prompt_base=value["prompt_base"],
-                    prompt_type=key
-                )
-                prompt = self.run_prompt(prompt_config)
-                answer = self.run_qa(
+        output = {"groups":[]}
+        animal = PROMPT_CONFIG["animal"]
+        query = animal["query"]
+        prompt_config = PromptGeneratorConfig(
+                prompt_intro=animal["prompt_intro"],
+                prompt_base=animal["prompt_base"],
+                prompt_type="animal"
+        )
+        prompt = self.run_prompt(prompt_config)
+        answer = self.run_qa(
                     compression_retriever,
                     chat_llm,
                     prompt["parser"],
                     prompt["prompt"],
                     query,
-                )
-                output[key] = answer
-                animal_descriptions = [
-                f"{animal.gender} {animal.species} {animal.group} {animal.strain}" 
-                for animal in answer.animals]
-                all_animals_description = "<SEP>".join(animal_descriptions)
-            else:
-                prompt_config = PromptGeneratorConfig(
-                    prompt_intro = value["prompt_intro"],
-                    prompt_base = value["prompt_base"],
-                    all_animals_description = all_animals_description,
-                    prompt_type = key
-                )
-                prompt = self.run_prompt(prompt_config)
-                answer = self.run_qa(
-                    compression_retriever,
-                    chat_llm,
-                    prompt["parser"],
-                    prompt["prompt"],
-                    query,
-                )
-                output[key] = answer
+        )
+        output["groups"] = [i.dict() for i in answer.animals]
+        for i,animal in enumerate(output["groups"]):
+            animal_description = " ".join([value for key, value in animal.items() if value!=None])
+            for key, value in PROMPT_CONFIG.items():
+                if key == "animal":
+                    continue
+                else:
+                    query = value["query"].format(animal=animal_description)
+                    print(query)
+                    prompt_config = PromptGeneratorConfig(
+                        prompt_intro = value["prompt_intro"],
+                        prompt_base = value["prompt_base"],
+                        all_animals_description = animal_description,
+                        prompt_type = key
+                    )
+                    prompt = self.run_prompt(prompt_config)
+                    answer = self.run_qa(
+                        compression_retriever,
+                        chat_llm,
+                        prompt["parser"],
+                        prompt["prompt"],
+                        query,
+                    ).dict()
+                    for key,value in answer.items():
+                        for subject in value:
+                            for sub_key,sub_value in subject.items():
+                                output["groups"][i][sub_key] = sub_value
+                    time.sleep(10)
         return output

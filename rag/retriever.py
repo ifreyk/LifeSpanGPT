@@ -7,7 +7,6 @@ from langchain.retrievers.document_compressors import CohereRerank
 from pydantic import BaseModel, Field
 from typing import List, Union
 
-
 class RetrieverConfig(BaseModel):
     file_path: Union[str, None] = Field(default=None)
     embeding_model: Union[str, None] = Field(default=None)

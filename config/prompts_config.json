@@ -7,11 +7,11 @@
     "animal_details": {
         "prompt_intro": "templates/prompt_intro/animal_details.txt",
         "prompt_base": "templates/prompt_bases/animal_details.txt",
-        "query": "What treatment or intervention or manipulation are used?"
+        "query": "What treatment or intervention or manipulation are used for {animal}?"
     },
     "animal_results": {
         "prompt_intro": "templates/prompt_intro/ainmal_results.txt",
         "prompt_base": "templates/prompt_bases/animal_results.txt",
-        "query": "What are Lifespan or survival curve/results?"
+        "query": "What are Lifespan or survival curve/results for {animal}?"
     }
 }
