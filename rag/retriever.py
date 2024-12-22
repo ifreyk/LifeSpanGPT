@@ -6,7 +6,14 @@ from langchain.vectorstores import FAISS
 from langchain.retrievers.document_compressors import CohereRerank
 from pydantic import BaseModel, Field
 from typing import List, Union
+import torch
 
+if torch.backends.mps.is_available(): # For macOS devices
+    DEVICE = "mps"
+elif torch.cuda.is_available(): # For NVIDIA GPUs
+    DEVICE = "cuda"
+else:
+    DEVICE = "cpu"
 
 class RetrieverConfig(BaseModel):
     file_path: Union[str, None] = Field(default=None)
@@ -34,7 +41,7 @@ class Retriever:
         encode_kwargs = {"normalize_embeddings": True}
         embeddings = HuggingFaceBgeEmbeddings(
             model_name=self.config.embeding_model,
-            model_kwargs={"device": "mps"},
+            model_kwargs={"device": DEVICE},
             encode_kwargs=encode_kwargs,
         )
         return embeddings
