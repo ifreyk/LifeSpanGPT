@@ -37,6 +37,6 @@ git clone https://github.com/ifreyk/LifeSpanGPT.git
 pip install -r requirements.txt
 ```
 ## Usage
-1) **tutorial.ipynb** - Notebook for quick run of the pipeline
-2) **detailed_tutorial.ipynb** - Notebook with detailed description for each step of the pipeline
-3) **metrics_calculation.ipynb** - Notebook for metric calculation
+1) **`tutorial.ipynb`** - Notebook for quick run of the pipeline
+2) **`detailed_tutorial.ipynb`** - Notebook with detailed description for each step of the pipeline
+3) **`metrics_calculation.ipynb`** - Notebook for metric calculation
