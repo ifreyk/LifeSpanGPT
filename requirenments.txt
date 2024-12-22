@@ -1,4 +1,4 @@
-llama_parse
-python-dotenv
-langchain
-typing
+llama_parse==0.5.7
+python-dotenv==1.0.1
+langchain==0.3.7
+typing==3.7.4.3 
