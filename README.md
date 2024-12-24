@@ -5,9 +5,9 @@ This project utilizes a Retrieval-Augmented Generation (RAG) pipeline to answer 
 
 ## Additional tokens
 Create **`.env`** file with following tokens
-   - **`LLAMA_CLOUD`** - `https://www.llamaindex.ai/`
-   - **`COHERE_TOKEN`** - `https://dashboard.cohere.com/`
-   - **`OPENAI_TOKEN`** - `https://openai.com/`
+   - **`LLAMA_CLOUD`** - [Llamaindex](https://www.llamaindex.ai/)
+   - **`COHERE_TOKEN`** - [Cohere](https://dashboard.cohere.com/)
+   - **`OPENAI_TOKEN`** - [OpenAI](https://openai.com)
 
 ## Repository structure
 - **Root Directory**:
