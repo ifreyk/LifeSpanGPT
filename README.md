@@ -3,6 +3,12 @@
 ## Overview
 This project utilizes a Retrieval-Augmented Generation (RAG) pipeline to answer questions related to aging research on animals. It leverages the **bge-small-en** model for document embedding, Cohere **rerank-english-v3.0** for ranking the most relevant documents, and GPT-4 for generating answers to the queries. The system also computes metrics to evaluate the quality of the answers by comparing them to reference answers.
 
+## Additional tokens
+Create **`.env`** file with following tokens
+   - **`LLAMA_CLOUD`** - `https://www.llamaindex.ai/`
+   - **`COHERE_TOKEN`** - `https://dashboard.cohere.com/`
+   - **`OPENAI_TOKEN`** - `https://openai.com/`
+
 ## Repository structure
 - **Root Directory**:
   - **`README.md`** - The main documentation file where users can find project information and setup instructions.
