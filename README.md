@@ -35,7 +35,7 @@ Create **`.env`** file with following tokens
     - **`animal.txt`** - File with intro to the prompt body to get information about experimantal groups in the article
 - **utils.py**:
   - **`parser.py`** - Class for parsing .pdf files to .md files for the pipeline
-## Instalation
+## Installation
 ``` bash
 git clone https://github.com/ifreyk/LifeSpanGPT.git
 ```
